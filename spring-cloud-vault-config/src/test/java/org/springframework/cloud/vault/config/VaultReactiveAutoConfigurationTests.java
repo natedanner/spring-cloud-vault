@@ -83,10 +83,9 @@ public class VaultReactiveAutoConfigurationTests {
 	public void shouldNotConfigureIfHttpClientIsMissing() {
 
 		this.contextRunner.withUserConfiguration(AuthenticationFactoryConfiguration.class)
-				.withClassLoader(new FilteredClassLoader("reactor.netty.http.client.HttpClient")).run(context -> {
+				.withClassLoader(new FilteredClassLoader("reactor.netty.http.client.HttpClient")).run(context ->
 
-					assertThat(context).doesNotHaveBean(ReactiveVaultOperations.class);
-				});
+					assertThat(context).doesNotHaveBean(ReactiveVaultOperations.class));
 	}
 
 	@Test

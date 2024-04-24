@@ -55,11 +55,11 @@ public class CassandraSecretIntegrationTests extends IntegrationTestSupport {
 	private static final String CREATE_USER_AND_GRANT_CQL = "CREATE USER '{{username}}' WITH PASSWORD '{{password}}' NOSUPERUSER;"
 			+ "GRANT SELECT ON ALL KEYSPACES TO {{username}};";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
-	private VaultCassandraProperties cassandra = new VaultCassandraProperties();
+	private final VaultCassandraProperties cassandra = new VaultCassandraProperties();
 
 	/**
 	 * Initialize cassandra secret backend.

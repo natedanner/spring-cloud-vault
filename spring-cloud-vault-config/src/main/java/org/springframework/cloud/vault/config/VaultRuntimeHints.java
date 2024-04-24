@@ -105,10 +105,9 @@ class VaultRuntimeHints implements RuntimeHintsRegistrar {
 		List<TypeReference> pluggableDescriptorReferences = pluggableDescriptors.stream().map(Object::getClass)
 				.map(TypeReference::of).collect(Collectors.toList());
 
-		reflection.registerTypes(pluggableDescriptorReferences, builder -> {
+		reflection.registerTypes(pluggableDescriptorReferences, builder ->
 			builder.withMembers(MemberCategory.INTROSPECT_DECLARED_CONSTRUCTORS,
-					MemberCategory.INTROSPECT_DECLARED_METHODS, MemberCategory.INVOKE_DECLARED_METHODS);
-		});
+					MemberCategory.INTROSPECT_DECLARED_METHODS, MemberCategory.INVOKE_DECLARED_METHODS));
 	}
 
 }

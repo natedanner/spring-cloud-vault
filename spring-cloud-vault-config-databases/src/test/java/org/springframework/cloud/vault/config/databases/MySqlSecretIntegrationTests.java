@@ -53,7 +53,7 @@ public class MySqlSecretIntegrationTests extends IntegrationTestSupport {
 	private static final String CREATE_USER_AND_GRANT_SQL = "CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';"
 			+ "GRANT SELECT ON *.* TO '{{name}}'@'%';";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 

@@ -183,7 +183,7 @@ public final class Version implements Comparable<Version> {
 	@Override
 	public String toString() {
 
-		List<Integer> digits = new ArrayList<Integer>();
+		List<Integer> digits = new ArrayList<>();
 		digits.add(this.major);
 		digits.add(this.minor);
 

@@ -47,9 +47,8 @@ public class VaultReactiveHealthIndicatorIntegrationTests extends IntegrationTes
 
 		VaultReactiveHealthIndicator healthIndicator = new VaultReactiveHealthIndicator(vaultTemplate);
 
-		healthIndicator.doHealthCheck(Health.up()).as(StepVerifier::create).consumeNextWith(actual -> {
-			assertThat(actual.getStatus()).isEqualTo(Status.UP);
-		}).verifyComplete();
+		healthIndicator.doHealthCheck(Health.up()).as(StepVerifier::create).consumeNextWith(actual ->
+			assertThat(actual.getStatus()).isEqualTo(Status.UP)).verifyComplete();
 	}
 
 }

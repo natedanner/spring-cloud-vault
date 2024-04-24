@@ -95,15 +95,15 @@ import org.springframework.web.client.RestTemplate;
  */
 public class VaultConfigDataLoader implements ConfigDataLoader<VaultConfigLocation> {
 
-	private final static ConfigData SKIP_LOCATION = null;
+	private static final ConfigData SKIP_LOCATION = null;
 
-	final static boolean reactorPresent = ClassUtils.isPresent("reactor.core.publisher.Flux",
+	static final boolean reactorPresent = ClassUtils.isPresent("reactor.core.publisher.Flux",
 			VaultConfigDataLoader.class.getClassLoader());
 
-	final static boolean webclientPresent = ClassUtils.isPresent(
+	static final boolean webclientPresent = ClassUtils.isPresent(
 			"org.springframework.web.reactive.function.client.WebClient", VaultConfigDataLoader.class.getClassLoader());
 
-	private final static boolean REGISTER_REACTIVE_INFRASTRUCTURE = reactorPresent && webclientPresent;
+	private static final boolean REGISTER_REACTIVE_INFRASTRUCTURE = reactorPresent && webclientPresent;
 
 	private final DeferredLogFactory logFactory;
 
@@ -148,10 +148,9 @@ public class VaultConfigDataLoader implements ConfigDataLoader<VaultConfigLocati
 
 		if (location.getSecretBackendMetadata() instanceof ApplicationEventPublisherAware) {
 
-			bootstrap.addCloseListener(event -> {
+			bootstrap.addCloseListener(event ->
 				((ApplicationEventPublisherAware) location.getSecretBackendMetadata())
-						.setApplicationEventPublisher(event.getApplicationContext());
-			});
+						.setApplicationEventPublisher(event.getApplicationContext()));
 		}
 
 		if (vaultProperties.getConfig().getLifecycle().isEnabled()) {

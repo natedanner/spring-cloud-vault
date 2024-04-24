@@ -34,7 +34,7 @@ public class VaultPostgreSqlProperties implements DatabaseSecretProperties {
 	 * Enable postgresql backend usage.
 	 */
 	@Deprecated
-	private boolean enabled = false;
+	private boolean enabled;
 
 	/**
 	 * Role name for credentials.

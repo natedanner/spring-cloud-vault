@@ -44,7 +44,7 @@ import static org.mockito.Mockito.verify;
  */
 public class VaultBootstrapPropertySourceConfigurationTests {
 
-	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 			.withConfiguration(AutoConfigurations.of(VaultBootstrapPropertySourceConfiguration.class));
 
 	@Test

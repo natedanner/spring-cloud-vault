@@ -51,11 +51,11 @@ public class ElasticsearchSecretIntegrationTests extends IntegrationTestSupport 
 
 	private static final String ES_HOME = "configure me";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
-	private VaultElasticsearchProperties elasticsearch = new VaultElasticsearchProperties();
+	private final VaultElasticsearchProperties elasticsearch = new VaultElasticsearchProperties();
 
 	/**
 	 * Initialize the elasticsearch secret backend.

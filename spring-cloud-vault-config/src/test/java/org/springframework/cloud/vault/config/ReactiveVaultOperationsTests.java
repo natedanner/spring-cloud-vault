@@ -70,9 +70,8 @@ public class ReactiveVaultOperationsTests {
 	@Test
 	public void shouldAccessVault() {
 
-		StepVerifier.create(this.reactiveOperations.read("secret/testVaultApp")).consumeNextWith(actual -> {
-			assertThat(actual.getData()).containsEntry("vault.value", "foo");
-		}).verifyComplete();
+		StepVerifier.create(this.reactiveOperations.read("secret/testVaultApp")).consumeNextWith(actual ->
+			assertThat(actual.getData()).containsEntry("vault.value", "foo")).verifyComplete();
 	}
 
 	@SpringBootApplication

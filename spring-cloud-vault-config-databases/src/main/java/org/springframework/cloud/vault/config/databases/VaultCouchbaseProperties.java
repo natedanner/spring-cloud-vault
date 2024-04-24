@@ -30,7 +30,7 @@ public class VaultCouchbaseProperties implements DatabaseSecretProperties {
 	/**
 	 * Enable couchbase backend usage.
 	 */
-	private boolean enabled = false;
+	private boolean enabled;
 
 	/**
 	 * Role name for credentials.
@@ -42,7 +42,7 @@ public class VaultCouchbaseProperties implements DatabaseSecretProperties {
 	 * Enable static role usage.
 	 *
 	 */
-	private boolean staticRole = false;
+	private boolean staticRole;
 
 	/**
 	 * Couchbase backend path.

@@ -76,7 +76,7 @@ public class VaultConfigConsulTests {
 
 	private static final String CONSUL_ACL_MASTER_TOKEN = "consul-master-token";
 
-	private static final ParameterizedTypeReference<Map<String, String>> STRING_MAP = new ParameterizedTypeReference<Map<String, String>>() {
+	private static final ParameterizedTypeReference<Map<String, String>> STRING_MAP = new ParameterizedTypeReference<>() {
 	};
 
 	@Value("${spring.cloud.consul.discovery.acl-token:}")

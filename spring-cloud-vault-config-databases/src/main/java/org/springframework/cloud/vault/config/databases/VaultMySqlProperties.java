@@ -34,7 +34,7 @@ public class VaultMySqlProperties implements DatabaseSecretProperties, VaultSecr
 	/**
 	 * Enable mysql backend usage.
 	 */
-	private boolean enabled = false;
+	private boolean enabled;
 
 	/**
 	 * Role name for credentials.

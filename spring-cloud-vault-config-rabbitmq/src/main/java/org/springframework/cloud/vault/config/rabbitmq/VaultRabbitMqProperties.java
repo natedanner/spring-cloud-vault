@@ -31,7 +31,7 @@ public class VaultRabbitMqProperties implements VaultSecretBackendDescriptor {
 	/**
 	 * Enable rabbitmq backend usage.
 	 */
-	private boolean enabled = false;
+	private boolean enabled;
 
 	/**
 	 * Role name for credentials.

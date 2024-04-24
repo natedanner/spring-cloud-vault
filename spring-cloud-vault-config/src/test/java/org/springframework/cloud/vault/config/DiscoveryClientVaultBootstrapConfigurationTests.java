@@ -44,7 +44,7 @@ import static org.mockito.Mockito.when;
  */
 public class DiscoveryClientVaultBootstrapConfigurationTests {
 
-	private ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(
+	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(
 			AutoConfigurations.of(DiscoveryClientVaultBootstrapConfiguration.class, VaultBootstrapConfiguration.class));
 
 	@Test
@@ -70,10 +70,9 @@ public class DiscoveryClientVaultBootstrapConfigurationTests {
 		this.contextRunner
 				.withUserConfiguration(DiscoveryConfiguration.class).withPropertyValues("spring.cloud.vault.token=foo",
 						"spring.cloud.vault.discovery.enabled=false", "spring.cloud.bootstrap.enabled=true")
-				.run(context -> {
+				.run(context ->
 
-					assertThat(context.getBeanNamesForType(VaultServiceInstanceProvider.class)).isEmpty();
-				});
+					assertThat(context.getBeanNamesForType(VaultServiceInstanceProvider.class)).isEmpty());
 	}
 
 	@Test
@@ -82,10 +81,9 @@ public class DiscoveryClientVaultBootstrapConfigurationTests {
 		this.contextRunner.withUserConfiguration(DiscoveryConfiguration.class)
 				.withPropertyValues("spring.cloud.vault.token=foo", "spring.cloud.vault.enabled=false",
 						"spring.cloud.bootstrap.enabled=true")
-				.run(context -> {
+				.run(context ->
 
-					assertThat(context.getBeanNamesForType(VaultServiceInstanceProvider.class)).isEmpty();
-				});
+					assertThat(context.getBeanNamesForType(VaultServiceInstanceProvider.class)).isEmpty());
 
 	}
 

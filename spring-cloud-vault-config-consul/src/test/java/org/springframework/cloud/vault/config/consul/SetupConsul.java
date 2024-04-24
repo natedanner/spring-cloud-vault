@@ -45,7 +45,7 @@ class SetupConsul {
 
 	private static final String CONNECTION_URL = String.format("%s:%d", CONSUL_HOST, CONSUL_PORT);
 
-	private static final ParameterizedTypeReference<Map<String, String>> STRING_MAP = new ParameterizedTypeReference<Map<String, String>>() {
+	private static final ParameterizedTypeReference<Map<String, String>> STRING_MAP = new ParameterizedTypeReference<>() {
 	};
 
 	private static final String CONSUL_ACL_MASTER_TOKEN = "consul-master-token";

@@ -38,9 +38,9 @@ class DefaultSecretBackendConfigurer implements SecretBackendConfigurer, Propert
 
 	private final Map<String, SecretBackendMetadata> secretBackends = new LinkedHashMap<>();
 
-	private boolean registerDefaultKeyValueSecretBackends = false;
+	private boolean registerDefaultKeyValueSecretBackends;
 
-	private boolean registerDefaultDiscoveredSecretBackends = false;
+	private boolean registerDefaultDiscoveredSecretBackends;
 
 	@Override
 	public SecretBackendConfigurer add(String path) {

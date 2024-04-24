@@ -41,25 +41,22 @@ class VaultHealthIndicatorAutoConfigurationTests {
 	@Test
 	void shouldNotConfigureHealthIndicatorWithoutVaultOperations() {
 
-		this.contextRunner.run(context -> {
-			assertThat(context).doesNotHaveBean("vaultHealthIndicator").doesNotHaveBean("vaultReactiveHealthIndicator");
-		});
+		this.contextRunner.run(context ->
+			assertThat(context).doesNotHaveBean("vaultHealthIndicator").doesNotHaveBean("vaultReactiveHealthIndicator"));
 	}
 
 	@Test
 	void shouldConfigureHealthIndicator() {
 
-		this.contextRunner.withUserConfiguration(ImperativeConfiguration.class).run(context -> {
-			assertThat(context).hasBean("vaultHealthIndicator");
-		});
+		this.contextRunner.withUserConfiguration(ImperativeConfiguration.class).run(context ->
+			assertThat(context).hasBean("vaultHealthIndicator"));
 	}
 
 	@Test
 	void shouldConfigureReactiveHealthIndicator() {
 
-		this.contextRunner.withUserConfiguration(ReactiveConfiguration.class).run(context -> {
-			assertThat(context).hasBean("vaultReactiveHealthIndicator");
-		});
+		this.contextRunner.withUserConfiguration(ReactiveConfiguration.class).run(context ->
+			assertThat(context).hasBean("vaultReactiveHealthIndicator"));
 
 	}
 
@@ -67,11 +64,10 @@ class VaultHealthIndicatorAutoConfigurationTests {
 	void shouldConfigureSingleHealthIndicator() {
 
 		this.contextRunner.withUserConfiguration(ImperativeConfiguration.class, ReactiveConfiguration.class)
-				.run(context -> {
+				.run(context ->
 					assertThat(context).hasBean("vaultHealthIndicator")
 							.hasSingleBean(VaultReactiveHealthIndicator.class)
-							.doesNotHaveBean(VaultHealthIndicator.class);
-				});
+							.doesNotHaveBean(VaultHealthIndicator.class));
 	}
 
 	static class ImperativeConfiguration {

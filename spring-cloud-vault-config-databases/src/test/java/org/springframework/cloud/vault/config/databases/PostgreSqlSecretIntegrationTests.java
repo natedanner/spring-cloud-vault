@@ -56,7 +56,7 @@ public class PostgreSqlSecretIntegrationTests extends IntegrationTestSupport {
 			+ "LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';\n"
 			+ "GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 

@@ -48,11 +48,11 @@ public class CouchbaseSecretIntegrationTests extends IntegrationTestSupport {
 
 	private static final String COUCHBASE_HOST = "localhost";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
-	private VaultCouchbaseProperties couchbaseProperties = new VaultCouchbaseProperties();
+	private final VaultCouchbaseProperties couchbaseProperties = new VaultCouchbaseProperties();
 
 	/**
 	 * Initialize couchbase secret backend.

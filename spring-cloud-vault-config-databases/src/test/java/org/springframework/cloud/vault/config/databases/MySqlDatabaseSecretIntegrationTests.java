@@ -43,7 +43,7 @@ import static org.springframework.cloud.vault.config.databases.VaultConfigDataba
  */
 public class MySqlDatabaseSecretIntegrationTests extends IntegrationTestSupport {
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 

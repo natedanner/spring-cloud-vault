@@ -54,11 +54,11 @@ public class MongoSecretIntegrationTests extends IntegrationTestSupport {
 
 	private static final String ROLES = "[ \"readWrite\", { \"role\": \"read\", \"db\": \"admin\" } ]";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
-	private VaultMongoProperties mongodb = new VaultMongoProperties();
+	private final VaultMongoProperties mongodb = new VaultMongoProperties();
 
 	/**
 	 * Initialize the mongodb secret backend.

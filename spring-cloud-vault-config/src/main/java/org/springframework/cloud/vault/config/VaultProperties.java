@@ -106,7 +106,7 @@ public class VaultProperties implements EnvironmentAware {
 	/**
 	 * Fail fast if data cannot be obtained from Vault.
 	 */
-	private boolean failFast = false;
+	private boolean failFast;
 
 	/**
 	 * Static vault token. Required if {@link #authentication} is {@code TOKEN}.
@@ -371,7 +371,7 @@ public class VaultProperties implements EnvironmentAware {
 	 */
 	public enum AuthenticationMethod {
 
-		APPID, APPROLE, AWS_EC2, AWS_IAM, AZURE_MSI, CERT, CUBBYHOLE, GCP_GCE, GCP_IAM, KUBERNETES, NONE, PCF, TOKEN;
+		APPID, APPROLE, AWS_EC2, AWS_IAM, AZURE_MSI, CERT, CUBBYHOLE, GCP_GCE, GCP_IAM, KUBERNETES, NONE, PCF, TOKEN
 
 	}
 
@@ -1195,7 +1195,7 @@ public class VaultProperties implements EnvironmentAware {
 		 *
 		 * @see org.springframework.core.PriorityOrdered
 		 */
-		private int order = 0;
+		private int order;
 
 		private ConfigLifecycle lifecycle = new ConfigLifecycle();
 

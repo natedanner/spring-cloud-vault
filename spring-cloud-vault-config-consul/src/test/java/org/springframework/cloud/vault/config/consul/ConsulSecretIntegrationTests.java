@@ -44,11 +44,11 @@ public class ConsulSecretIntegrationTests extends IntegrationTestSupport {
 
 	private static final String POLICY = "key \"\" { policy = \"read\" }";
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
-	private VaultConsulProperties consul = new VaultConsulProperties();
+	private final VaultConsulProperties consul = new VaultConsulProperties();
 
 	/**
 	 * Initialize the consul secret backend.

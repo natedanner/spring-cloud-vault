@@ -112,7 +112,7 @@ public class VaultConfigMongoTests {
 		List<Document> collections = mongoDatabase.listCollections().into(new ArrayList<>());
 
 		for (Document collection : collections) {
-			if (collection.getString("name").equals("hello")) {
+			if ("hello".equals(collection.getString("name"))) {
 				mongoDatabase.getCollection(collection.getString("name")).drop();
 			}
 		}

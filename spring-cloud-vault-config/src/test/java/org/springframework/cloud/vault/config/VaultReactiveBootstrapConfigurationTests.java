@@ -52,7 +52,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class VaultReactiveBootstrapConfigurationTests {
 
-	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 			.withConfiguration(AutoConfigurations.of(VaultReactiveBootstrapConfiguration.class))
 			.withAllowBeanDefinitionOverriding(true);
 
@@ -78,10 +78,9 @@ public class VaultReactiveBootstrapConfigurationTests {
 	public void shouldNotConfigureIfHttpClientIsMissing() {
 
 		this.contextRunner.withUserConfiguration(AuthenticationFactoryConfiguration.class)
-				.withClassLoader(new FilteredClassLoader("reactor.netty.http.client.HttpClient")).run(context -> {
+				.withClassLoader(new FilteredClassLoader("reactor.netty.http.client.HttpClient")).run(context ->
 
-					assertThat(context).doesNotHaveBean(ReactiveVaultOperations.class);
-				});
+					assertThat(context).doesNotHaveBean(ReactiveVaultOperations.class));
 	}
 
 	@Test

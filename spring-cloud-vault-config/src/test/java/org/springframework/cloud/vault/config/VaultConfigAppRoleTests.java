@@ -97,7 +97,7 @@ public class VaultConfigAppRoleTests {
 		String roleId = (String) vaultOperations.read("auth/approle/role/with-secret-id/role-id").getData()
 				.get("role_id");
 		String secretId = (String) vaultOperations
-				.write(String.format("auth/approle/role/with-secret-id/secret-id", "with-secret-id"), null).getData()
+				.write(String.format("auth/approle/role/with-secret-id/secret-id"), null).getData()
 				.get("secret_id");
 
 		System.setProperty("spring.cloud.vault.app-role.role-id", roleId);

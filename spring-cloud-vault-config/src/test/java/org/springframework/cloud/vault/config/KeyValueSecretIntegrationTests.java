@@ -34,7 +34,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class KeyValueSecretIntegrationTests extends IntegrationTestSupport {
 
-	private VaultProperties vaultProperties = Settings.createVaultProperties();
+	private final VaultProperties vaultProperties = Settings.createVaultProperties();
 
 	private VaultConfigOperations configOperations;
 
